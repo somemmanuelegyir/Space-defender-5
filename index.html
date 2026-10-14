@@ -1,0 +1,105 @@
+
+<div class="game">
+  <header class="topbar">
+    <div>
+      <h1>SPACE <span>DEFENDER</span></h1>
+      <p>GALACTIC COMBAT SYSTEM</p>
+    </div>
+    <button id="soundBtn" class="small-btn">🔊 SOUND</button>
+  </header>
+
+  <div class="hud">
+    <div><small>SCORE</small><strong id="score">0</strong></div>
+    <div><small>WAVE</small><strong id="wave">1</strong></div>
+    <div><small>HULL</small><strong id="lives">♥♥♥</strong></div>
+    <div><small>BEST</small><strong id="highScore">0</strong></div>
+  </div>
+
+  <div class="arena">
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="bossBar" class="boss-bar hidden">
+      <span>BOSS INTEGRITY</span>
+      <div><i id="bossHealth"></i></div>
+    </div>
+
+    <div id="startOverlay" class="overlay">
+      <div class="panel">
+        <div class="emblem">✦</div>
+        <h2>DEFEND THE GALAXY</h2>
+        <p>Enemy forces are approaching. Pilot your fighter, choose your firing direction, and survive every wave.</p>
+        <button id="startBtn" class="primary">START MISSION</button>
+        <small>Touch controls supported • Sound effects included</small>
+      </div>
+    </div>
+
+    <div id="pauseOverlay" class="overlay hidden">
+      <div class="panel">
+        <h2>MISSION PAUSED</h2>
+        <p>Your fighter is holding position.</p>
+        <button id="resumeBtn" class="primary">▶ RESUME MISSION</button>
+      </div>
+    </div>
+
+    <div id="gameOverOverlay" class="overlay hidden">
+      <div class="panel">
+        <h2>MISSION FAILED</h2>
+        <p>Final score: <strong id="finalScore">0</strong></p>
+        <button id="restartBtn" class="primary">↻ TRY AGAIN</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-row">
+    <button id="pauseBtn" class="action-btn">Ⅱ PAUSE</button>
+    <button id="fireModeBtn" class="action-btn fire-mode">FIRE: FORWARD</button>
+    <button id="specialBtn" class="action-btn special">⚡ SHOCKWAVE <span id="specialCount">3</span></button>
+  </div>
+
+  <div class="control-layout">
+    <div class="movement">
+      <div class="move-row">
+        <button class="move-btn" data-move="up">▲</button>
+      </div>
+      <div class="move-row">
+        <button class="move-btn" data-move="left">◀</button>
+        <button class="move-btn center-btn" data-move="stop">●</button>
+        <button class="move-btn" data-move="right">▶</button>
+      </div>
+      <div class="move-row">
+        <button class="move-btn" data-move="down">▼</button>
+      </div>
+      <small>MOVE FIGHTER</small>
+    </div>
+
+    <div class="combat-controls">
+      <button id="aimBtn" class="aim-btn">🎯 AIM: AUTO</button>
+      <button id="fireBtn" class="fire-btn">
+        <span>🔥</span>
+        <strong>FIRE</strong>
+        <small>HOLD TO SHOOT</small>
+      </button>
+      <button id="directionBtn" class="aim-btn">↗ AIM DIRECTION</button>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <small>ENEMIES DESTROYED</small>
+      <strong id="kills">0</strong>
+    </div>
+    <div class="info-card">
+      <small>WEAPON SYSTEM</small>
+      <strong id="weaponStatus">PLASMA</strong>
+    </div>
+    <div class="info-card">
+      <small>POWER-UP</small>
+      <strong id="powerStatus">NONE</strong>
+    </div>
+  </div>
+
+  <p class="tip">
+    TIP: Change firing style with the FIRE button above the controls.
+    Move while firing to attack from different angles.
+  </p>
+</div>
